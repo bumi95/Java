@@ -17,8 +17,7 @@ public class Minheap {
 		// heap의 마지막 원소 위치
 		int currentNode = child/2;
 		// child의 부모 위치
-		while(currentNode >= 1 && heap.get(child).num < 
-					heap.get(currentNode).num) {
+		while(currentNode >= 1 && heap.get(child).num < heap.get(currentNode).num) {
 			Collections.swap(heap, child, currentNode);
 			// 빈도수를 기준으로 자식원소의 빈도수가 부모보다 작다면 swap
 			child = currentNode;
@@ -49,20 +48,16 @@ public class Minheap {
 			int tmp;
 			if(rightNode > heap.size()-1) {
 				// 오른쪽 자식이 없는 경우
-				if(heap.get(leftNode).num >=
-						heap.get(currentNode).num)
+				if(heap.get(leftNode).num >= heap.get(currentNode).num)
 					// 왼쪽 자식(빈도수)이 더 크거나 같다면 종료
 					break;
 				tmp = leftNode;
 			}
 			else { // 왼쪽 자식 오른쪽 자식이 모두 있는 경우
-				if(heap.get(leftNode).num >=
-			  heap.get(currentNode).num && heap.get(rightNode).num >=
-							 heap.get(currentNode).num)
-			// 두 자식 노드가 부모 노드보다 더 크거나 같다면 종료
+				if(heap.get(leftNode).num >= heap.get(currentNode).num && heap.get(rightNode).num >= heap.get(currentNode).num)
+				// 두 자식 노드가 부모 노드보다 더 크거나 같다면 종료
 					break;
-				tmp = (heap.get(leftNode).num <
-				   heap.get(rightNode).num) ? leftNode : rightNode;
+				tmp = (heap.get(leftNode).num < heap.get(rightNode).num) ? leftNode : rightNode;
 				// 더 작은 노드로 변경한다.
 			}
 			Collections.swap(heap, tmp, currentNode);
