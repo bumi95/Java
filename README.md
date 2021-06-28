@@ -90,12 +90,12 @@ public TreeNode removeMin() { // 히프의 삭제
 		}
 		else { // 왼쪽 자식 오른쪽 자식이 모두 있는 경우
 			if(heap.get(leftNode).num >= heap.get(currentNode).num && heap.get(rightNode).num >= heap.get(currentNode).num)
-	  	// 두 자식 노드가 부모 노드보다 더 크거나 같다면 종료
+	  			// 두 자식 노드가 부모 노드보다 더 크거나 같다면 종료
 				break;
 			tmp = (heap.get(leftNode).num < heap.get(rightNode).num) ? leftNode : rightNode;
 			// 더 작은 노드로 변경한다.
 		}
-    Collections.swap(heap, tmp, currentNode);
+		Collections.swap(heap, tmp, currentNode);
 		// tmp와 currentNode의 위치에 있는 값을 swap
 			
 		currentNode = tmp;
@@ -150,7 +150,7 @@ public void HuffmanTree() {
 		TreeNode rightchild = h.removeMin();
 		// 최소노드 2개를 삭제
 		huffman = new TreeNode(leftchild.num+rightchild.num,'.');
-		// 삭제한 최소노드 2개로 부모노드 생성 두번째 인자 '.'은 해당 			   노드는 단말노드가 아닌
+		// 삭제한 최소노드 2개로 부모노드 생성 두번째 인자 '.'은 해당 노드는 단말노드가 아닌
 		// 내부노드 이므로 count하지 않는 값인 '.'로 전달
 		huffman.leftNode = leftchild;
 		huffman.rightNode = rightchild;
@@ -158,15 +158,15 @@ public void HuffmanTree() {
 		if(h.isEmpty())
 			return; // 히프가 비어있으면 huffman 트리 완성
 		
-		h.put(huffman); // 최소 히프에 최소노드로 만든 부모노드를 					   다시 삽입
-	}// 해당작업 반복
+		h.put(huffman); // 최소 히프에 최소노드로 만든 부모노드를 다시 삽입
+	} // 해당작업 반복
 }
 ```
 > 아래의 코드는 만들어진 허프만 트리를 탐색하여 문자와 빈도 수, 허프만 코드를 출력하는 함수입니다.
 ```java
 public void showWord(TreeNode rt, int[] trace, int lastObj) {
 	// huffman의 root를 받으면 각각 문자의 코드를 출력
-	// trace배열은 트리에서 단말노드를 추적하기 위한 배열. 원소는 			   단말노드의 코드집합이다.
+	// trace배열은 트리에서 단말노드를 추적하기 위한 배열. 원소는 단말노드의 코드집합이다.
 	if(rt.leftNode != null) {// 왼쪽 자식을 탐색할 경우
 		trace[lastObj] = 0; // 0을 저장
 		showWord(rt.leftNode, trace, lastObj + 1);
@@ -220,7 +220,14 @@ aabccdaaa jjel bbda a
 aasfeedfse sjelldljjf adfeejjspwz fjdjdjslzz
 ```
 ![image02](https://user-images.githubusercontent.com/39798011/123589945-f5d91900-d824-11eb-9905-087900500cf7.jpg)
-
+* * *
+[최적의 편집 순서열 구현](https://github.com/bumi95/Java/tree/main/Dynamic_programming)
+=========================
+## 문제 정의
+> 두 개의 문자열을 입력 받아 최적의 문자열 편집 순서를 결정합니다.   
+> 편집 순서가 올바른지 테스트하기 위해 문자열 X에 적용하여 최종 결과가 문자열 Y가 되는지 확인하는 함수를 포함합니다.
+## 문제 설계
+> 
 
 
 
