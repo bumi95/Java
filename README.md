@@ -1,3 +1,7 @@
+JAVA
+====
+> 자바를 이용한 프로젝트 혹은 과제를 기술합니다.
+
 [Huffman Tree 구현](https://github.com/bumi95/Java/tree/main/Huffman_Tree)
 ====================
 ## 문제 정의
